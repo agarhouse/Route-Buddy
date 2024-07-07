@@ -292,6 +292,19 @@ class _SubmitRouteDetailsWidgetState extends State<SubmitRouteDetailsWidget> {
                                   _model.routeCompanyNameTextController.text,
                               routedesc: _model.textController3.text,
                             ));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(
+                              'Route Created',
+                              style: TextStyle(
+                                color: FlutterFlowTheme.of(context).primaryText,
+                              ),
+                            ),
+                            duration: const Duration(milliseconds: 4000),
+                            backgroundColor:
+                                FlutterFlowTheme.of(context).secondary,
+                          ),
+                        );
                         context.safePop();
                       },
                       text: 'Submit',
