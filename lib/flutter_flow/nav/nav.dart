@@ -124,10 +124,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ProfileWidget(),
         ),
         FFRoute(
-          name: 'EditProfile',
-          path: '/editProfile',
-          requireAuth: true,
-          builder: (context, params) => const EditProfileWidget(),
+          name: 'profile_Settings',
+          path: '/profileSettings',
+          builder: (context, params) => const ProfileSettingsWidget(),
+        ),
+        FFRoute(
+          name: 'profile_ChangePassword',
+          path: '/profileChangePassword',
+          builder: (context, params) => const ProfileChangePasswordWidget(),
+        ),
+        FFRoute(
+          name: 'profile_Edit',
+          path: '/profileEdit',
+          builder: (context, params) => const ProfileEditWidget(),
+        ),
+        FFRoute(
+          name: 'profile_Create',
+          path: '/profileCreate',
+          builder: (context, params) => const ProfileCreateWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

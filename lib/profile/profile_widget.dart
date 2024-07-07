@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'profile_model.dart';
 export 'profile_model.dart';
 
@@ -325,30 +326,48 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             size: 24.0,
                           ),
                         ),
-                        Expanded(
-                          child: SwitchListTile.adaptive(
-                            value: _model.switchListTileValue ??= true,
-                            onChanged: (newValue) async {
-                              setState(
-                                  () => _model.switchListTileValue = newValue);
-                            },
-                            title: Text(
-                              'Active',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              10.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            'Account Active',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Inter',
+                                  letterSpacing: 0.0,
+                                ),
+                          ),
+                        ),
+                        Align(
+                          alignment: const AlignmentDirectional(1.0, 0.0),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                130.0, 0.0, 0.0, 0.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                if (loggedIn == true)
+                                  Align(
+                                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                                    child: GradientText(
+                                      'Active',
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      colors: const [
+                                        Color(0xFF10FB71),
+                                        Color(0xFF8AFFC5)
+                                      ],
+                                      gradientDirection: GradientDirection.ltr,
+                                      gradientType: GradientType.linear,
+                                    ),
                                   ),
+                              ],
                             ),
-                            tileColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            activeColor: FlutterFlowTheme.of(context).secondary,
-                            activeTrackColor: const Color(0x3439D2C0),
-                            dense: false,
-                            controlAffinity: ListTileControlAffinity.trailing,
-                            contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 4.0, 0.0),
                           ),
                         ),
                       ],
@@ -393,7 +412,7 @@ class _ProfileWidgetState extends State<ProfileWidget>
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('EditProfile');
+                              context.pushNamed('profile_Edit');
                             },
                             child: Text(
                               'Edit Profile',
@@ -442,14 +461,23 @@ class _ProfileWidgetState extends State<ProfileWidget>
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
-                          child: Text(
-                            'Account Settings',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  letterSpacing: 0.0,
-                                ),
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              context.pushNamed('profile_Settings');
+                            },
+                            child: Text(
+                              'Account Settings',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
                           ),
                         ),
                       ],

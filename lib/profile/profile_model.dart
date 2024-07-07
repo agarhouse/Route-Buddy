@@ -6,8 +6,6 @@ class ProfileModel extends FlutterFlowModel<ProfileWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for SwitchListTile widget.
-  bool? switchListTileValue;
 
   @override
   void initState(BuildContext context) {}
