@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "8788460348",
+    "project_id": "routebuddy-a229f",
+    "storage_bucket": "routebuddy-a229f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8788460348:android:45539a6898e537a20d9439",
+        "android_client_info": {
+          "package_name": "com.agarhouse.routebuddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6jQApZf2Q6DvJv0l5T18i5KGf1fTYAOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
